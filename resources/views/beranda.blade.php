@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{!! $namaAplikasi !!}} - Beranda</title>
+    <title>{{ $namaAplikasi }} - Beranda</title>
 </head>
 <body>
-    <h1>{!! $namaAplikasi !!}</h1>
+    <h1>{{ $namaAplikasi }}</h1>
     <p>Konfirmasi berhasil. Hari ini {{ $waktu }}.</p>
 
     <table border="1" cellpadding="6" cellspacing="0">
