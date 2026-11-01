@@ -19,6 +19,8 @@ class DashboardController extends Controller
              'ikon' => 'bi-book-fill', 'warna' => 'warning'],
             ['judul' => 'KRS Aktif', 'jumlah' => 842,
              'ikon' => 'bi-journal-check', 'warna' => 'info'],
+            ['judul' => 'Rata-rata SKS per KRS', 'jumlah' => '21.5',
+             'ikon' => 'bi-journal-bookmark', 'warna' => 'info'],
         ];
 
         $kolomKrs = [

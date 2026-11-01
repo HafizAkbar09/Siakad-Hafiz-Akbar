@@ -20,6 +20,7 @@
             @include('layouts.partials.sidebar')
 
             <main class="col-lg-9 col-xl-10 px-3 px-md-4 py-4">
+                @include('layouts.partials.flash')
                 @yield('content')
 
                 <footer class="text-center text-body-secondary small mt-5">
@@ -33,5 +34,27 @@
     <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}">
     </script>
     @stack('scripts')
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const toggleBtn = document.getElementById('themeToggle');
+            const themeIcon = document.getElementById('themeIcon');
+            const html = document.documentElement;
+
+            if (toggleBtn) {
+                toggleBtn.addEventListener('click', function () {
+                    const currentTheme = html.getAttribute('data-bs-theme');
+                    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                    
+                    html.setAttribute('data-bs-theme', newTheme);
+
+                    if (newTheme === 'dark') {
+                        themeIcon.classList.replace('bi-moon-stars', 'bi-sun');
+                    } else {
+                        themeIcon.classList.replace('bi-sun', 'bi-moon-stars');
+                    }
+                });
+            }
+        });
+    </script>
 </body>
 </html>

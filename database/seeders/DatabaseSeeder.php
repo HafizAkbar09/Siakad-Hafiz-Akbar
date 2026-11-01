@@ -1,4 +1,8 @@
 <?php
+// nama: hafiz
+// nim: 3202416014
+// kelas: 5C
+// tgl Modifikasi: 21/10/2026
 
 namespace Database\Seeders;
 
@@ -13,13 +17,17 @@ class DatabaseSeeder extends Seeder
     /**
      * Seed the application's database.
      */
+    use WithoutModelEvents;
+
     public function run(): void
     {
-        // User::factory(10)->create();
-
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
+        $this->call([
+            AdminSeeder::class,
+            UserSeeder::class,
+            DosenSeeder::class,
+            MahasiswaSeeder::class,
+            MataKuliahSeeder::class,
+            KrsSeeder::class,
         ]);
     }
 }
