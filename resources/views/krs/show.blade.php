@@ -1,7 +1,6 @@
 <!-- Nama: Hafiz Akbar
 NIM: 3202416014
 Kelas: 5C -->
-
 @extends('layouts.app')
 
 @section('title', 'Detail KRS')
@@ -52,7 +51,7 @@ Kelas: 5C -->
                         </tr>
                     </thead>
                     <tbody>
-                        @forelse ($krs->mataKuliah as $index => $mk)
+                        @forelse ($krs->matakuliah as $index => $mk)
                             <tr>
                                 <td class="text-center">{{ $index + 1 }}</td>
                                 <td>{{ $mk->kode_mk ?? '-' }}</td>
@@ -61,14 +60,16 @@ Kelas: 5C -->
                             </tr>
                         @empty
                             <tr>
-                                <td colspan="4" class="text-center text-muted py-3">Belum ada mata kuliah yang diambil.</td>
+                                <td colspan="4" class="text-center text-muted py-3">
+                                    Belum ada mata kuliah yang diambil.
+                                </td>
                             </tr>
                         @endforelse
                     </tbody>
                     <tfoot>
                         <tr class="fw-bold table-light">
                             <td colspan="3" class="text-end">Total SKS</td>
-                            <td class="text-center">{{ $krs->mataKuliah->sum('sks') }}</td>
+                            <td class="text-center">{{ $krs->matakuliah->sum('sks') }}</td>
                         </tr>
                     </tfoot>
                 </table>
@@ -81,7 +82,7 @@ Kelas: 5C -->
             <i class="bi bi-arrow-left"></i> Kembali
         </a>
         @if (Auth::user()->role === 'admin')
-            <a href="{{ route('krs.edit', $krs) }}" class="btn btn-warning">
+            <a href="{{ route('krs.edit', $krs->id) }}" class="btn btn-warning">
                 <i class="bi bi-pencil-square"></i> Ubah
             </a>
         @endif

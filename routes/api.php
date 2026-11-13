@@ -1,5 +1,9 @@
 <?php
 
+// Nama: Hafiz Akbar
+// Kelas: 5C
+// Tanggal diubah: 11/11/2026
+
 use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\DosenController;
 use Illuminate\Support\Facades\Route;
