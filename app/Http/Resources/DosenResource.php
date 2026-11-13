@@ -1,5 +1,9 @@
 <?php
 
+// Nama: Hafiz Akbar
+// Kelas: 5C
+// Tanggal diubah: 11/11/2025
+
 namespace App\Http\Resources;
 
 use Illuminate\Http\Request;
